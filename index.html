@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Smoothie Hunter</title>
+        <meta name="description" content="Hunt fruit, kill animals, jump around">
+        <meta name="robots" content="noindex,nofollow" />
+
+        <!-- Open graph stuff for sharing -->
+        <meta property="og:title" content="Smoothie Hunter - Platform Game">
+        <meta property="og:type" content="game">
+        <meta property="og:url" content="http://purelywebdesign.co.uk/sandbox/smoothiehunter/">
+        <meta property="og:image" content="http://www.purelywebdesign.co.uk/sandbox/smoothiehunter/img/screenshot.jpg">
+        <meta property="og:description" content="I've just played Smoothie Hunter, a fast paced platform game. Collect fruit, defeat enemies and jump around. Great fun!">
+
+        <!-- ICO files........trust apple -->
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="img/touch/apple-touch-icon-180x180-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/touch/apple-touch-icon-152x152-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/touch/apple-touch-icon-120x120-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/touch/apple-touch-icon-76x76-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="img/touch/touch-icon-192x192.png">
+        <link rel="icon" sizes="128x128" href="img/touch/touch-icon-128x128.png">
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="MobileOptimized" content="320">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Phaser App">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+        
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="dist/main.css">
+    </head>
+    <body>
+
+        <main id="game"></main>
+
+        <script src="dist/script-min.js"></script>
+
+        <!-- // Not using any of this at the moment
+        <script src="js/helper.js"></script>
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        -->
+
+        <script src="js/vendor/jquery-2.1.3.min.js"></script>
+        <script src="js/vendor/phaser.min.js"></script>
+        
+        <script src="js/Boot.js"></script>
+        <script src="js/Preloader.js"></script>
+        <script src="js/MainMenu.js"></script>
+        <script src="js/GameOverMenu.js"></script>
+        <script src="js/InstructionsMenu.js"></script>
+        <script src="js/Game.js"></script>
+
+        <script src="js/entities/Player.js"></script>
+        <script src="js/entities/EnemyHog.js"></script>
+        <script src="js/entities/EnemyBee.js"></script>
+        <script src="js/entities/fruit.js"></script>
+
+        <script type="text/javascript">
+
+            (function () {
+
+                var game = new Phaser.Game("100%", "100%", Phaser.AUTO, 'game');
+
+                //  Add & start the boot state.
+                game.state.add('Boot', BasicGame.Boot);
+                game.state.start('Boot');
+
+            })();
+
+            // Google analytics
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-57176124-1', 'auto'); ga('send', 'pageview');
+
+            // somthing to do with click listener
+            (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
+        </script>
+    </body>
+</html>
